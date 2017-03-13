@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.1)
+set(CMAKE_CXX_STANDARD 11)
+project(ChessBoardCreator)
+find_package(libps REQUIRED)
+include_directories(${LIBPS_INCLUDE_DIRS})
+add_executable(ChessBoardCreator ChessBoardCreator.cpp)
+target_link_libraries(ChessBoardCreator ${LIBPS_LIBRARIES})
