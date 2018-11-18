@@ -8,17 +8,19 @@ using namespace std;
 
 class ChessBoardCreator
 {
-    public:
+    private:
         const float mm2pt = 2.8345;
+        const int rowSizeA4 = 596;
+        const int colSizeA4 = 842;
 
         int rows;
         int columns;
-        int size_mm;
-        float size_pt;
+        int squareSizeMm;
+        float squareSizePt;
 
+    public:
         ChessBoardCreator();
-
-    void CreateBoardMm();
+        void CreateBoardMm();
 };
 
 #endif
