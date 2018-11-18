@@ -2,6 +2,8 @@
 #define CHESSBOARDCREATOR_H
 
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 #include <libps/pslib.h>
 
 using namespace std;
@@ -15,11 +17,12 @@ class ChessBoardCreator
 
         int rows;
         int columns;
-        int squareSizeMm;
+        float squareSizeMm;
         float squareSizePt;
 
     public:
         ChessBoardCreator();
+        string CreateFileName();
         void CreateBoardMm();
 };
 

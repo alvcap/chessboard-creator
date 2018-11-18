@@ -12,14 +12,27 @@ ChessBoardCreator::ChessBoardCreator()
     squareSizePt = squareSizeMm * mm2pt;
 }
 
+string ChessBoardCreator::CreateFileName()
+{
+    string fileName;
+
+    // Convert square size to string with 2 decimals
+    stringstream stream;
+    stream << fixed << setprecision(2) << squareSizeMm;
+    string squareSizeMmString = stream.str();
+
+    fileName = "chessboard_" + to_string(rows) \
+                              + "x" + to_string(columns) + \
+                              + "_" + squareSizeMmString + "mm.ps";
+
+    return fileName;
+}
+
 void ChessBoardCreator::CreateBoardMm()
 {
-    string fileName = "chessboard_" + to_string(rows) \
-                              + "x" + to_string(columns) + \
-                              + "_" + to_string(squareSizeMm) + "mm.ps";
-
     PSDoc *cb;
     float color;
+    string fileName = CreateFileName();
 
     PS_boot();
     cb = PS_new();

@@ -8,5 +8,5 @@ Calibration chessboard creator for machine vision applications.
 
 Requires libps <http://pslib.sourceforge.net/>
 
-Findlibps.cmake module can be found on cMake directory, paste that into your cmake/Modules directory
+Findlibps.cmake module can be found on cmake-modules directory, paste that into your cmake/Modules directory
 
