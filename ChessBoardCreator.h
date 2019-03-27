@@ -19,10 +19,12 @@ class ChessBoardCreator
         int columns;
         float squareSizeMm;
         float squareSizePt;
+        float margin = 0;
 
     public:
         ChessBoardCreator();
         string CreateFileName();
+        void SetMargin(float marginValue);
         void CreateBoardMm();
 };
 

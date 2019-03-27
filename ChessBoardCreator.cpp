@@ -28,6 +28,12 @@ string ChessBoardCreator::CreateFileName()
     return fileName;
 }
 
+// marginValue received in millimeters
+void ChessBoardCreator::SetMargin(float marginValue)
+{
+    margin = marginValue*mm2pt;
+}
+
 void ChessBoardCreator::CreateBoardMm()
 {
     PSDoc *cb;
@@ -54,7 +60,7 @@ void ChessBoardCreator::CreateBoardMm()
                 color = 1.0;
 
             PS_setcolor(cb, "fillstroke", "gray", color, 0.0, 0.0, 0.0);
-            PS_rect(cb, squareSizePt*r, squareSizePt*c, \
+            PS_rect(cb, margin + squareSizePt*r, margin + squareSizePt*c, \
                              squareSizePt, squareSizePt);
             PS_fill(cb);
         }
@@ -71,6 +77,7 @@ void ChessBoardCreator::CreateBoardMm()
 int main()
 {
     ChessBoardCreator CB;
+    CB.SetMargin(10);
     CB.CreateBoardMm();
 
     return 0;
