@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 set(CMAKE_CXX_STANDARD 11)
 project(ChessBoardCreator)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules")
 find_package(libps REQUIRED)
 include_directories(${LIBPS_INCLUDE_DIRS})
 add_executable(ChessBoardCreator ChessBoardCreator.cpp)
