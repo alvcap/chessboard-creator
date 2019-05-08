@@ -1,5 +1,9 @@
 #include "ChessBoardCreator.h"
 
+const float ChessBoardCreator::mm2pt = 2.8345F;
+const float ChessBoardCreator::rowSizeA4 = 596.0F;
+const float ChessBoardCreator::colSizeA4 = 842.0F;
+
 ChessBoardCreator::ChessBoardCreator()
 {
     cout << "Number of rows: ";
@@ -21,8 +25,8 @@ string ChessBoardCreator::CreateFileName()
     stream << fixed << setprecision(2) << squareSizeMm;
     string squareSizeMmString = stream.str();
 
-    fileName = "chessboard_" + to_string(rows) \
-                              + "x" + to_string(columns) + \
+    fileName = "chessboard_" + to_string(static_cast<long double>(rows)) \
+                              + "x" + to_string(static_cast<long double>(columns)) + \
                               + "_" + squareSizeMmString + "mm.ps";
 
     return fileName;

@@ -11,15 +11,15 @@ using namespace std;
 class ChessBoardCreator
 {
     private:
-        const float mm2pt = 2.8345;
-        const int rowSizeA4 = 596;
-        const int colSizeA4 = 842;
+        static const float mm2pt;
+        static const float rowSizeA4;
+        static const float colSizeA4;
 
         int rows;
         int columns;
         float squareSizeMm;
         float squareSizePt;
-        float margin = 0;
+        float margin;
 
     public:
         ChessBoardCreator();
